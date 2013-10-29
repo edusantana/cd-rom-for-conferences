@@ -160,7 +160,7 @@ ul#icons span.ui-icon {
 		</div>
 
 		<div id="tabs-2">
-			<% @trabalhos.each_pair do |categoria, trabalhos| %>
+			<% @submissions.each_pair do |categoria, trabalhos| %>
 				<h2> <%= categoria %> </h2>
 				<div class="accordion">
 				<% trabalhos.each do |t| %>
@@ -184,7 +184,7 @@ ul#icons span.ui-icon {
 
 
 	<div id="tabs-3">
-		<% @equipes.each_pair do |categoria, equipes| %>
+		<% @teams.each_pair do |categoria, equipes| %>
 			<h3> <%= categoria %> </h3>
 			<ul>
 			<% equipes.each do |pessoa| %>
@@ -197,7 +197,7 @@ ul#icons span.ui-icon {
 	<div id="tabs-4">
 
 		<h1>Sobre o evento</h1>
-		<% @evento.each do |row| %>
+		<% @event.each do |row| %>
 			<p><b><%= row[0] %></b>: <%= row[1] %></p>
 		<% end %>
 
