@@ -1,7 +1,8 @@
-cd-rom-for-conferences
-======================
+# cd-rom-for-conferences
 
-CD-ROM  Generator for confereces
+You can use this project to generate a cd-rom for your conference. 
+
+Você pode utilizar este projeto para gerar o cd-rom contendo os anais da sua conferência/seminário.
 
 ## Getting started
 
@@ -24,15 +25,16 @@ Open `~/cd-roms/my-conference-cd-rom/intro.html` and see what was generated.
 
 ### Changing data
 
-Open `simple-cd/data/submissions.csv` and add line bellow:
+Open `simple-cd/data/submissions.csv` and edit or run command
+bellow to add a single submission:
 
-	echo -e "article\tfiles/article.pdf\tMy article\tJohn Lenon\tMichel Jackson\tGandi" >> data/submissions.csv
+	echo -e "article\tfiles/article.pdf\tMy article\tMusic\tAbastract about this\tJohn Lenon\tMichel Jackson\tLuiz Gonzaga" >> data/submissions.csv
 
 Generate the presentation file again:
 
 	ruby simple-cd.rb < templates/gepad.eruby > ~/cd-roms/my-conference-cd-rom/intro.html
 
-Open `intro.html` and see that a submission was added at the end of the file.
+Open `intro.html` and see that a submission was added at the end of the page.
 
 ### Create your own template
 
@@ -53,9 +55,8 @@ Open `index.html` and find the lines that includes files, like:
 	<script src="js/jquery-1.9.1.js"></script>
 	<script src="js/jquery-ui-1.10.3.custom.js"></script>
 
-*DON'T USE the above line*, use the lines from your index.html.
-
-Use those lines to update your template.
+*DON'T USE the above line*, use the lines from your index.html. Use those lines 
+to update your template.
 
 ## If that's not enough
 
@@ -63,7 +64,5 @@ Create a copy of `simple-cd` and create your own engine for generate the cd-rom.
 
 ## Contribution
 
-* You can submit your `simple-cd` generation template (like `gepad.eruby`)
-* You can create and submit your created engine (like `simple-cd` folder)
-
-
+* You can submit templates at `simple-cd/templates`
+* You can create and submit other engine (like `simple-cd` and `simple-cd.rb`)

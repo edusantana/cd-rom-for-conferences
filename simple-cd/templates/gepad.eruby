@@ -165,16 +165,21 @@ ul#icons span.ui-icon {
 				<div class="accordion">
 				<% trabalhos.each do |t| %>
 					<% autores = [] %>
-					<% if t[3] then autores << t[3] end %>
-					<% if t[4] then autores << t[4] end %>
 					<% if t[5] then autores << t[5] end %>
 					<% if t[6] then autores << t[6] end %>
 					<% if t[7] then autores << t[7] end %>
+					<% if t[8] then autores << t[8] end %>
 					<h3><a href="#"><%= t[2] %></a></h3>
 					<div>
 						<p class="autores"><b>Autores</b>: <%= autores.join ' | ' %> </p>
+					<% if t[3] then %>
+						<p class="keywords"><b>Palavras chaves</b>: <%= t[3] %> </p>
+					<% end %>
+					<% if t[4] then %>
+						<p class="abstract"><b>Resumo</b>: <%= t[4] %> </p>
+					<% end %>
 						<p>
-							<a target="_blank" class="aula ui-icon-arrowthickstop-1-s" href="trabalhos/<%= t[1] %>">Download</a>
+							<a target="_blank" class="aula ui-icon-arrowthickstop-1-s" href="<%= t[1] %>">Download</a>
 						</p>
 					</div>
 				<% end %>
