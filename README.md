@@ -2,7 +2,11 @@
 
 You can use this project to generate a cd-rom for your conference. 
 
-Você pode utilizar este projeto para gerar o cd-rom contendo os anais da sua conferência/seminário.
+## Screenshots
+
+You can see screnshots of a generated cd-rom at:
+
+* [simple-cd/screenshots/gepad] (https://github.com/edusantana/cd-rom-for-conferences/tree/master/simple-cd/screenshots/gepad/)
 
 ## Getting started
 
@@ -15,7 +19,8 @@ Você pode utilizar este projeto para gerar o cd-rom contendo os anais da sua co
 
 Create a cd-rom structure from jquery-ui ziped file:
 
-	mkdir ~/cd-roms;cd ~/cd-roms
+	mkdir ~/cd-roms
+	cd ~/cd-roms
 	wget https://github.com/edusantana/cd-rom-for-conferences/raw/master/jquery/jquery-ui-1.10.3.custom.zip
 	unzip jquery-ui-1.10.3.custom.zip
 	mv jquery-ui-1.10.3.custom my-conference-cd-rom
@@ -26,6 +31,8 @@ Create a cd-rom structure from jquery-ui ziped file:
 	ruby simple-cd.rb < templates/gepad.eruby > ~/cd-roms/my-conference-cd-rom/intro.html
 
 Open `~/cd-roms/my-conference-cd-rom/intro.html` and see what was generated.
+
+NOTE: This page was written in portuguese and using utf-8 encoding.
 
 ### Changing data
 

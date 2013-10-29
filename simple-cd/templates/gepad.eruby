@@ -79,7 +79,7 @@ body {
 	font: 62.5% "Trebuchet MS", sans-serif;
 	margin: 5px;
 	text-align: justify;
-	background-color: #a3bbe1;
+	background-image: url(images/bg.png);
 }
 
 td {
@@ -142,7 +142,7 @@ ul#icons span.ui-icon {
 			<li><a href="#tabs-4">Sobre</a>
 			</li>
 		</ul>
-		<div id="tabs-1" style="background-color: #a3bbe1;">
+		<div id="tabs-1">
 			<div>
 				<h1>UNIVERSIDADE FEDERAL DA PARAÍBA - 2013</h1>
 				<h2>I Seminário Nacional sobre Processos de Aprendizagem e Diversidade</h2>
@@ -153,9 +153,9 @@ ul#icons span.ui-icon {
 				<h1>Realização</h1>
 
 				<img src="images/gepad.jpg"/>
-				<img src="images/ufpb.png"/>
-				<img src="images/psicopedagogia.jpg"/>
-				<img src="images/ce.jpg"/>
+				<a href="http://www.ufpb.br"><img src="images/ufpb.png"/></a>
+				<a href="http://www.ce.ufpb.br/?page_id=524"><img src="images/psicopedagogia.jpg"/></a>
+				<a href="http://www.ce.ufpb.br"><img src="images/ce.jpg"/></a>>
 			</div>
 		</div>
 
