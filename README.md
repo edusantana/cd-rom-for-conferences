@@ -6,12 +6,16 @@ Você pode utilizar este projeto para gerar o cd-rom contendo os anais da sua co
 
 ## Getting started
 
+### Requirements
+
+* ruby
+* erubis (http://www.kuwata-lab.com/erubis/)
+
 ### Create a cd-rom structure
 
 Create a cd-rom structure from jquery-ui ziped file:
 
-	mkdir ~/cd-roms
-	cd ~/cd-roms
+	mkdir ~/cd-roms;cd ~/cd-roms
 	wget https://github.com/edusantana/cd-rom-for-conferences/raw/master/jquery/jquery-ui-1.10.3.custom.zip
 	unzip jquery-ui-1.10.3.custom.zip
 	mv jquery-ui-1.10.3.custom my-conference-cd-rom
