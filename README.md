@@ -6,14 +6,29 @@ You can use this project to generate a cd-rom for your conference.
 
 You can see screnshots of a generated cd-rom at:
 
-* [simple-cd/screenshots/gepad] (https://github.com/edusantana/cd-rom-for-conferences/tree/master/simple-cd/screenshots/gepad/)
+* [simple-cd/screenshots/gepad](https://github.com/edusantana/cd-rom-for-conferences/tree/master/simple-cd/screenshots/gepad/)
+
+
+## How it works
+
+We have 3 entities:
+
+* engine to read the data
+* datasource
+* eruby template to generate the presentation page of the cd-rom
+
+## Engines
+
+For now, only one engine was implemented:
+
+* [simple-cd](https://github.com/edusantana/cd-rom-for-conferences/blob/master/simple-cd/README.md)
 
 ## Getting started
 
 ### Requirements
 
 * ruby
-* erubis (http://www.kuwata-lab.com/erubis/)
+* [erubis](http://www.kuwata-lab.com/erubis/)
 
 ### Create a cd-rom structure
 
@@ -36,8 +51,7 @@ NOTE: This page was written in portuguese and using utf-8 encoding.
 
 ### Changing data
 
-Open `simple-cd/data/submissions.csv` and edit or run command
-bellow to add a single submission:
+Let's add some data to submission datasource::
 
 	echo -e "article\tfiles/article.pdf\tMy article\tMusic\tAbastract about this\tJohn Lenon\tMichel Jackson\tLuiz Gonzaga" >> data/submissions.csv
 
@@ -55,12 +69,11 @@ Open `gepad.eruby` and save it as your template `my-conference.eruby`:
 
 ## Updating jquery
 
-You can (and it is recommended) select/edit your own jqueryui theme at
-http://jqueryui.com/themeroller/#themeGallery.
+You can (and it is recommended) select/edit your own [jqueryui theme](http://jqueryui.com/themeroller/#themeGallery).
 
-Unzip the downloaded file and rename the folder and indicated at "Create a cd-rom structure".
+Unzip the downloaded file and rename the folder as indicated at "Create a cd-rom structure".
 
-Open `index.html` and find the lines that includes files, like:
+Open `index.html` from jquery and find these lines:
 
 	<link href="css/start/jquery-ui-1.10.3.custom.css" rel="stylesheet">
 	<script src="js/jquery-1.9.1.js"></script>
