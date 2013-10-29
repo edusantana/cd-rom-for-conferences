@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=uft-8" />
+<title>Projeto Africanidade</title>
+<link type="text/css" href="css/custom-theme/jquery-ui-1.8.16.custom.css"
+	rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+
+		// Accordion
+		$("#accordion").accordion({
+			header : "h3"
+		});
+		$("#equipe-accordion").accordion({
+			header : "h3"
+		});
+		$("#aplicativos-accordion").accordion({
+			header : "h3"
+		});
+
+		// Tabs
+		$('#tabs').tabs();
+		$('#equipe').tabs();
+
+		$("a.aula").button();
+
+		// Dialog			
+		$('#dialog').dialog({
+			autoOpen : false,
+			width : 600,
+			buttons : {
+				"Ok" : function() {
+					$(this).dialog("close");
+				},
+				"Cancel" : function() {
+					$(this).dialog("close");
+				}
+			}
+		});
+
+		// Dialog Link
+		$('#dialog_link').click(function() {
+			$('#dialog').dialog('open');
+			return false;
+		});
+
+		// Datepicker
+		$('#datepicker').datepicker({
+			inline : true
+		});
+
+		// Slider
+		$('#slider').slider({
+			range : true,
+			values : [ 17, 67 ]
+		});
+
+		// Progressbar
+		$("#progressbar").progressbar({
+			value : 20
+		});
+
+		//hover states on the static widgets
+		$('#dialog_link, ul#icons li').hover(function() {
+			$(this).addClass('ui-state-hover');
+		}, function() {
+			$(this).removeClass('ui-state-hover');
+		});
+
+	});
+</script>
+<style type="text/css">
+/*demo page css*/
+body {
+	font: 62.5% "Trebuchet MS", sans-serif;
+	margin: 5px;
+	text-align: justify;
+	background-color: #a3bbe1;
+}
+
+td {
+	text-align: justify;
+	vertical-align: top;
+}
+
+.demoHeaders {
+	margin-top: 2em;
+}
+
+#dialog_link {
+	padding: .4em 1em .4em 20px;
+	text-decoration: none;
+	position: relative;
+}
+
+#dialog_link span.ui-icon {
+	margin: 0 5px 0 0;
+	position: absolute;
+	left: .2em;
+	top: 50%;
+	margin-top: -8px;
+}
+
+ul#icons {
+	margin: 0;
+	padding: 0;
+}
+
+ul#icons li {
+	margin: 2px;
+	position: relative;
+	padding: 4px 0;
+	cursor: pointer;
+	float: left;
+	list-style: none;
+}
+
+ul#icons span.ui-icon {
+	float: left;
+	margin: 0 4px;
+}
+</style>
+</head>
+<body>
+
+	<div class="header">
+	</div>
+
+	<!-- Tabs -->
+	<div id="tabs">
+		<ul>
+			<li><a href="#tabs-1">Início</a>
+			</li>
+			<li><a href="#tabs-2">Trabalhos</a>
+			</li>
+			<li><a href="#tabs-3">Equipe</a>
+			</li>
+			<li><a href="#tabs-4">Sobre</a>
+			</li>
+			<li><a href="#tabs-5">Aplicativos</a>
+			</li>
+		</ul>
+		<div id="tabs-1" style="background-color: #a3bbe1;">
+			<div>
+				<p style="text-align: center;">Texto de início aqui</p>
+			</div>
+		</div>
+
+		<div id="tabs-2">
+			<h3> Categoria X </h3>
+			<p>Texto introdutório sobre esta seção: componentes</p>
+			<div id="accordion">
+
+<% for t in @t %>
+<% autores = [] %>
+<% if t[2] then autores << t[2] end %>
+<% if t[3] then autores << t[3] end %>
+<% if t[4] then autores << t[4] end %>
+<% if t[5] then autores << t[5] end %>
+<% if t[6] then autores << t[6] end %>
+				<div>
+					<h3><a href="#"><%= t[1] %></a></h3>
+					<div>
+						<p class="autores"><b>Autores</b>: <%= autores.join ' | ' %> </p>
+						<p>
+							<a target="_blank" class="aula" href="trabalhos/<%= t[0] %>">Download</a>
+						</p>
+					</div>
+				</div>
+<% end %>
+
+
+
+			</div>
+
+		</div>
+		
+		
+		<div id="tabs-3">
+			<div id="equipe">
+				<ul>
+					<li><a href="#equipe-1">Gestores</a>
+					</li>
+					<li><a href="#equipe-2">Professores</a>
+					</li>
+					<li><a href="#equipe-3">Apoio</a>
+					</li>
+				</ul>
+				<div id="equipe-1">
+					<table>
+						<tr>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>Edna Gusmão</p>
+							</td>
+							<td><h3>Coordenadora do curso e coordenadora de mídias
+									impressas e digitais</h3>
+								<p class="curriculo">
+									Possui Pós-Doutorado em Sociologia da Comunicação pela
+									Université Catholique de Louvain-UCL Bélgica. Doutorado em
+									Sociologia - Université Paris I Panthéon Sorbonne. Mestrado em
+									Educação pela Universidade Federal da Paraíba. Graduação pela
+									Universidade do Estado do Rio de Janeiro.Consultora da
+									CAPES/UAB. Presidente do Fórum Nacional da Área de Pedagogia
+									EAD. Pesquisadora do Laboratório de Aplicações de Vídeo Digital
+									LAVID/UFPB. Coordenadora da Pesquisa Mídias Integradas em
+									Processos de Aprendizagem. Atualmente é Professor Associado da
+									Universidade Federal da Paraíba. Tem experiência na área de
+									Educação, atuando nos Cursos de Mestrado e Doutorado em
+									Educação da UFPB principalmente nos seguintes temas: agir
+									comunicativo, ciberespaço, ecologias cognitivas, redes digitais
+									e sistemas inteligentes e Educação a Distância.
+									Vice-Coordenadora do <a href="http://www.polodigital.ufpb.br/"
+										target="_blank"> Pólo Digital Multimídia da Paraíba</a>.
+									Coordenadora da <a href="http://www.paulofreire.ufpb.br"
+										target="_blank"> Biblioteca Digital Paulo Freire</a>.
+									Idealizadora e Coordenadora Geral do Programa de Televisão
+									Conexão Ciência TVUFPB canal 22 BIG TV. Foi Coordenadora dos
+									Cursos de Mestrado e Doutorado em Educação da UFPB e Presidente
+									do Fórum de Coordenadores de Pós-Graduação do Norte e Nordeste.
+								</p>
+								<p class="lattes">
+									Endereço para acessar o CV: <a
+										href="http://lattes.cnpq.br/9163217527871872">http://lattes.cnpq.br/9163217527871872</a>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>Edna Gusmão</p>
+							</td>
+							<td>
+								<h3>Coordenadora do curso e coordenadora de mídias
+									impressas e digitais</h3>
+								<p class="curriculo">
+									Possui Pós-Doutorado em Sociologia da Comunicação pela
+									Université Catholique de Louvain-UCL Bélgica. Doutorado em
+									Sociologia - Université Paris I Panthéon Sorbonne. Mestrado em
+									Educação pela Universidade Federal da Paraíba. Graduação pela
+									Universidade do Estado do Rio de Janeiro.Consultora da
+									CAPES/UAB. Presidente do Fórum Nacional da Área de Pedagogia
+									EAD. Pesquisadora do Laboratório de Aplicações de Vídeo Digital
+									LAVID/UFPB. Coordenadora da Pesquisa Mídias Integradas em
+									Processos de Aprendizagem. Atualmente é Professor Associado da
+									Universidade Federal da Paraíba. Tem experiência na área de
+									Educação, atuando nos Cursos de Mestrado e Doutorado em
+									Educação da UFPB principalmente nos seguintes temas: agir
+									comunicativo, ciberespaço, ecologias cognitivas, redes digitais
+									e sistemas inteligentes e Educação a Distância.
+									Vice-Coordenadora do <a href="http://www.polodigital.ufpb.br/"
+										target="_blank"> Pólo Digital Multimídia da Paraíba</a>.
+									Coordenadora da <a href="http://www.paulofreire.ufpb.br"
+										target="_blank"> Biblioteca Digital Paulo Freire</a>.
+									Idealizadora e Coordenadora Geral do Programa de Televisão
+									Conexão Ciência TVUFPB canal 22 BIG TV. Foi Coordenadora dos
+									Cursos de Mestrado e Doutorado em Educação da UFPB e Presidente
+									do Fórum de Coordenadores de Pós-Graduação do Norte e Nordeste.
+								</p>
+								<p class="lattes">
+									Endereço para acessar o CV: <a
+										href="http://lattes.cnpq.br/9163217527871872">http://lattes.cnpq.br/9163217527871872</a>
+								</p>
+							</td>
+						</tr>
+
+					</table>
+
+				</div>
+				<div id="equipe-2">
+
+					<h3>Introdução a Educação a Distância</h3>
+					<table>
+						<tr>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>
+									<a target="_blank"
+										href="http://lattes.cnpq.br/9163217527871872">Edna Gusmão</a>
+								</p>
+							</td>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>
+									<a target="_blank"
+										href="http://lattes.cnpq.br/8039916428930486">Daniele dos
+										Santos Ferreira Dias </a>
+								</p>
+							</td>
+						</tr>
+					</table>
+
+					<h3>Gestão e Desenvolvimento de Projetos em EJA</h3>
+					<table>
+						<tr>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>Adriana Diniz</p>
+							</td>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>Neroaldo Pontes</p>
+							</td>
+						</tr>
+					</table>
+
+
+
+
+
+					<h3>Ensino de Matemática em Educação de Jovens e Adultos</h3>
+					<table>
+						<tr>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>Roberto Capistrano</p>
+							</td>
+						</tr>
+					</table>
+
+					<h3>Eja, Diversidade e Direitos Humanos</h3>
+					<table>
+						<tr>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>Marcus Joelby</p>
+							</td>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>Melissa Gusmão</p>
+							</td>
+						</tr>
+					</table>
+
+					<h3>Eja e o Mundo do Trabalho</h3>
+					<table>
+						<tr>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>Roberto Veras</p>
+							</td>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>Jorge Hermida</p>
+							</td>
+						</tr>
+					</table>
+
+					<h3>Eja, Pedagogia Social e Trabalho em Rede</h3>
+					<table>
+						<tr>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>Stella Gaspar</p>
+							</td>
+						</tr>
+					</table>
+					<h3>Seminários Avançados I</h3>
+					<table>
+						<tr>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>Timothy Ireland</p>
+							</td>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>Florenço Mendes</p>
+							</td>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>Neroaldo Pontes</p>
+							</td>
+						</tr>
+					</table>
+					<h3>Seminários Avançados II</h3>
+					<table>
+						<tr>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>Emília Prestes</p>
+							</td>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>Leônidas Borges</p>
+							</td>
+						</tr>
+					</table>
+
+
+
+
+					<h3>Metodologia da Pesquisa</h3>
+					<table>
+						<tr>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>Eládio Brennand</p>
+							</td>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>José Washington</p>
+							</td>
+						</tr>
+					</table>
+
+
+
+
+					<h3>Educação de Jovens e Adultos (Eja), Cultura Escolar e
+						Prática Docente</h3>
+					<table>
+						<tr>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>José Barbosa</p>
+							</td>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>Maria José</p>
+							</td>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>Maria Helena</p>
+							</td>
+						</tr>
+					</table>
+
+				</div>
+				<div id="equipe-3">
+					<table>
+						<tr>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>
+									<a href="http://lattes.cnpq.br/8039916428930486">Daniele
+										dos Santos Ferreira Dias </a>
+								</p>
+							</td>
+							<td><h3>Designer instrucional, coordenadora de
+									multimídias</h3>
+								<p class="curriculo">Possui graduação em Pedagogia (2004) e
+									mestrado em Educação, na linha Estudos Culturais e Tecnologias
+									da Informação e Comunicação (2008) pela Universidade Federal da
+									Paraíba - UFPB. É especialista em Tutoria On-line, tendo vasta
+									experiência na área de Educação com ênfase em Tecnologia
+									Educacional. Atualmente, é professora do Componente Curricular
+									Seminários Temáticos de Prática Curricular VI, e designer
+									instrucional do Curso de Pedagogia na modalidade a distância da
+									UFPB, diretora de Informática Educativa da Prefeitura Municipal
+									de João Pessoa/PB e consultora em Tecnologias na Educação.</p>
+							</td>
+						</tr>
+						<tr>
+							<td><img
+								src="img/equipe/gestores/edna.jpg" />
+								<p>
+									<a href="http://lattes.cnpq.br/6047383716536661">Eduardo de
+										Santana Medeiros Alexandre</a>
+								</p>
+							</td>
+							<td>
+								<h3>Designer</h3>
+								<p class="curriculo">Mestrando em Ciência da Computação,
+									pela UFPB. Trabalhou como Desenvolvedor de Software na Phoebus
+									Tecnologia por 3 anos. Trabalhou como bolsita no LDMI
+									auxiliando em diversos projetos como Biblioteca Digital de
+									Paulo Freire, TV Digital. Atuou na produção das aulas em HTML e
+									no design deste cd.</p></td>
+						</tr>
+
+					</table>
+
+				</div>
+			</div>
+		</div>
+		<div id="tabs-4">
+			<p>Texto sobre o projeto aqui.</p>
+		</div>
+
+		<div id="tabs-5">
+			<div class="ui-state-highlight ui-corner-all"
+				style="margin-top: 20px; padding: 0 .7em;">
+				<p>
+					<span class="ui-icon ui-icon-info"
+						style="float: left; margin-right: .3em;"></span> Para que alguns
+					recursos deste CD sejam lidos/executados adequadamente, é
+					necessário que os correspondentes aplicativos estejam instalados no
+					seu computador. Caso contrário, instale aqueles de que necessitar,
+					clicando nos respectivos links, abaixo indicados.
+				</p>
+			</div>
+			<br />
+			<div id="aplicativos-accordion">
+				<div>
+					<h3>
+						<a href="#">Leitor de PDF</a>
+					</h3>
+					<div>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+						Lorem ipsum dolor sit amet.</div>
+				</div>
+				<div>
+					<h3>
+						<a href="#">Flash Plugin</a>
+					</h3>
+					<div>Phasellus mattis tincidunt nibh.</div>
+				</div>
+				<div>
+					<h3>
+						<a href="#">Tocador de vídeo e áudio</a>
+					</h3>
+					<div>Phasellus mattis tincidunt nibh.</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>
+
+
