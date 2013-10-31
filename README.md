@@ -20,7 +20,7 @@ We have 3 entities:
 
 For now, only one engine was implemented:
 
-* [simple-cd](https://github.com/edusantana/cd-rom-for-conferences/blob/master/simple-cd/README.md)
+* [simple-cd](https://github.com/edusantana/cd-rom-for-conferences/blob/master/simple-cd/README.md): reads data from csv files.
 
 ## Getting started
 
@@ -58,7 +58,7 @@ be the root the cd-rom.
 
 Open `~/cd-roms/my-conference-cd-rom/intro.html` and see what was generated.
 
-NOTE: This page (templete) was written in portuguese and using utf-8 encoding.
+NOTE: This page (template) was written in portuguese and using utf-8 encoding.
 
 ### Changing data
 
